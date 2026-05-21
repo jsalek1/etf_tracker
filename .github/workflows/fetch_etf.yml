@@ -1,0 +1,28 @@
+name: Actualizar datos ETF
+
+on:
+  schedule:
+    - cron: "0 1 * * 2-6"
+  workflow_dispatch:
+
+jobs:
+  fetch-etf-data:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Instalar dependencias
+        run: |
+          pip install yfinance gspread google-auth pandas
+
+      - name: Correr script
+        env:
+          GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
+        run: python fetch_etf.py
