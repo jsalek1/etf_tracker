@@ -7,7 +7,13 @@ import os
 from datetime import datetime
 
 # ─── CONFIGURACIÓN ────────────────────────────────────────────────
-TICKERS = ["VOO", "XLE", "KO"]  # Agrega más tickers aquí cuando quieras
+TICKERS = [
+    "VOO", "XLE", "KO",
+    "TSLA", "AAPL", "NVDA", "MSFT", "AMZN",
+    "XLK", "XLV", "XLF", "XLI",
+    "QQQ", "VTI", "VEA", "VWO",
+    "GLD", "SLV", "USO", "DJP",
+    "BTC-USD", "ETH-USD", "XRP-USD"]  # Agrega más tickers aquí cuando quieras
 
 SHEET_ID = "1V5zqEIKrMTQoaCrmD5hEnEbNcy0vQYRQHirOtE0hP1U"
 SHEET_NAME = "Precios"
